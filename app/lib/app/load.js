@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = load;
 const tslib_1 = require("tslib");
 const fs_1 = tslib_1.__importDefault(require("fs"));
 const module_1 = tslib_1.__importDefault(require("module"));
@@ -33,4 +34,3 @@ function load(scriptPath) {
     vm_1.default.runInContext(moduleCode, sanbox, { filename: userModule.filename });
     return userModule.exports;
 }
-exports.default = load;

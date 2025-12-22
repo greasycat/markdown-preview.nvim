@@ -357,7 +357,7 @@ export default class PreviewPage extends React.Component {
           <script type="text/javascript" src="/_static/full.render.js"></script>
         </Head>
         <main data-theme={this.state.theme}>
-          <div style={page_ctn + this.state.page_width} contentEditable={contentEditable ? 'true' : 'false'}>
+          <div style={{margin: '0 auto',color: 'var(--foreground-color)',maxWidth: `${this.state.page_width}`}} contentEditable={contentEditable ? 'true' : 'false'}>
             { disableFilename == 0 &&
               <header
                 id="page-header"
