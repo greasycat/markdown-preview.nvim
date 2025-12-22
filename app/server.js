@@ -75,6 +75,7 @@ exports.run = function () {
         const name = await buffer.name
         const content = await buffer.getLines()
         const currentBuffer = await plugin.nvim.buffer
+        const page_width = await plugin.nvim.getVar('mkdp_page_width')
         client.emit('refresh_content', {
           options,
           isActive: currentBuffer.id === buffer.id,
@@ -83,6 +84,7 @@ exports.run = function () {
           cursor,
           pageTitle,
           theme,
+          page_width,
           name,
           content
         })
