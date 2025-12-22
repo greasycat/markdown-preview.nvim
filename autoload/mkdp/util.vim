@@ -145,7 +145,7 @@ function! mkdp#util#install(...)
     return
   endif
   let obj = json_decode(join(readfile(s:package_file)))
-  let cmd = (mkdp#util#get_platform() ==# 'win' ? 'install.cmd' : './app/install.sh')
+  let cmd = (mkdp#util#get_platform() ==# 'win' ? 'install.cmd' : './install.sh')
   if get(a:, '1', v:false) ==# v:true
     " execute 'lcd ' . s:mkdp_root_dir . '/app'
     execute '!' . cmd

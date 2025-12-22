@@ -28,11 +28,12 @@ info() {
 build() {
   if command -v yarn &>/dev/null; then
     yarn upgrade
+    yarn add typescript
     yarn build
   else
     echo "No yarn found"
     exit 1
+  fi
 }
 
 build
-
