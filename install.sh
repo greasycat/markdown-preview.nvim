@@ -27,6 +27,12 @@ info() {
 
 build() {
   if command -v yarn &>/dev/null; then
+    error "No node found"
+  fi
+
+  export NODE_OPTIONS=--openssl-legacy-provider
+
+  if command -v yarn &>/dev/null; then
     yarn upgrade
     yarn add typescript
     yarn build
