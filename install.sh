@@ -31,9 +31,14 @@ build() {
     yarn add typescript
     yarn build
   else
-    echo "No yarn found"
+    error "No yarn found"
     exit 1
   fi
 }
 
+reset_build() {
+  git reset --hard HEAD
+}
+
 build
+reset_build
